@@ -12,4 +12,11 @@
 ===================================================
 """
 
-# Write your code here
+x = input ("Enter a number: ")
+x_integer = int (x)
+
+
+
+
+
+
