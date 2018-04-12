@@ -19,12 +19,44 @@
 ===================================================
 """
 
-# Write your function here
+
+def get_profit(lista):  # najveci moguci profit koji mozem ostvariti cemo preracunati
+                        # kada najmanju trenutnu vrijednost bitcoin-a oduzmemo od najvece
+
+    def min(lista): # definisemo fje min i max
+
+        min_lista = lista[0]  # fiksiramo prvi clanliste,tj postavimo da je on najmanji
+        for i in range(len(lista) - 1): # prolazimo kroz ostale clanove liste ,onaj sto smo fiksirali iskljucujemo
+                                        # pa zato pozicija prvog clana u listi  kroz koji prolazimo je i+1
+
+            if min_lista > lista[i + 1]: # ako je clan kroz koji prolazimo manji od datog minimuma sada on postaje minimum
+                min_lista = lista[i + 1]
+
+        return min_lista # fja vraca min liste
+    def max(lista): # analogno kao za min
+
+        max_lista = lista[0]
+        for i in range(len(lista) - 1):
+
+            if max_lista < lista[i + 1]:
+                max_lista = lista[i + 1]
+        return max_lista
+
+    return max(lista) - min(lista)  # na kraju fja vraca get_profit vraca razliku najvece i najmanje vrijednosti
+
 
 
 
 def main():
-    # Test your function here
+
+
+    lista=[13456.5, 12654, 9674.7]
+    print("Najveci ostvareni profit je: ", get_profit(lista))
     pass
 
 main()
+
+
+
+
+
