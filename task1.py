@@ -19,12 +19,22 @@
 # Write your function here
 
 
-def area_of_circle(poluprecnik):
-    povrsina = poluprecnik * poluprecnik *pi
-    return povrsina
 
-    print(area_of_circle)
+import math
+
+def area_of_circle(r):
+
+    if not isinstance(r, float) and not isinstance(r, int): # unijeti broj mora biti cijeli ili decimalni
+        return -1                                        # ako nije vratice -1
+
+    return (abs(r)**2)*math.pi       # fja vraca povrsinu kruga datog poluprecnika
+
+def main():
+
+    povrsina = area_of_circle(-2,3)
+    print(povrsina)
 
 
+    pass
 
 main()
