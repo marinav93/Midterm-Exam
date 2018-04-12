@@ -14,7 +14,26 @@
 * Note: Please describe in details possible cases
 * in which your solution might not work.
 ===================================================
+"""
+
+n = int(input("Koliko brojeva unosite? "))  # da bi znali kolika ce biti duzina liste,mora biti cijeli br
+
+lista = [] # na poovetki je data prazna lista
+
+nenegativni = negativni = 0
+
+for i in range(n): # koliko lista ima clanova,toliko cemo puta pitati korisnika da unese novi clan liste
+    novi_broj = int(input("Unesite "+ str(i+1)+ ".broj: ")) # stringovi mogu da se spoje sabiranjem
+    lista.append(novi_broj) # svaki od unijetih brojeva dodajemo u listu
 
 
+    if novi_broj < 0: #  ako je unijeti broj manji od nule,ukupan broj negativnih se uveca za 1
+        negativni += 1
+    else:      # u susprotnom se uveca broj nenegativnih za 1
+        nenegativni += 1
 
+
+print("Vasa lista: ",str(lista))
+print("Nenegativnih brojeva u listi ima: ", nenegativni)
+print("Negativnih brojeva u listi ima: ", negativni)
 
