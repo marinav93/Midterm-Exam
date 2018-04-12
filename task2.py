@@ -11,9 +11,24 @@
 * in which your solution might not work.
 ===================================================
 """
+broj = ("Unesite cijeli broj: ")  # eval procjenjuje sta je korisnik unio
 
-x = input ("Enter a number: ")
-x_integer = int (x)
+if not isinstance(broj,int): # ispitujemo da li je unijet cijeli broj
+    print("Pogresan unos!")
+    quit()
+
+proizvod = 1
+for i in str(abs(broj)): # prolazi kroz cifre datog broja(ali apsolutnog,zbog minusa)
+
+    proizvod *= int(i)   # mnozi sve cifre datog broja
+
+if broj < 0 : # ako je broj negativan proizvod cifara ce takodje biti negativan,pa zato dobijeni proiz mnozimo sa -1
+
+    print("Proizvod cifara datog broja je: ", (-1) * proizvod)
+
+else:
+    print("Proizvod cifara datog broja je: ", proizvod)
+
 
 
 
